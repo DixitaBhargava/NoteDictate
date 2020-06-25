@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="NoteDictate_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" pagingScroll="YES" id="jD4-dn-8w4">
+                            <items>
+                                <tableRow identifier="Row" id="oQs-Y8-RZb" customClass="NoteSelectRow" customModule="NoteDictate_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="xgd-YX-JSk">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="w6Z-SB-N4b"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="textLabel" destination="w6Z-SB-N4b" id="Nde-3T-Cs4"/>
+                                        <segue destination="rb9-DV-Ori" kind="push" id="EOP-Ha-pXE"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Add New Note" id="5ML-a7-Aun">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.21568627450980393" green="0.43137254901960786" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addNewNote" destination="AgC-eL-Hgc" id="kkm-Ve-oER"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="jD4-dn-8w4" id="96A-2l-fQO"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="31"/>
+        </scene>
+        <!--Detailed Interface Controller-->
+        <scene sceneID="L2B-eC-Rdy">
+            <objects>
+                <controller id="rb9-DV-Ori" customClass="DetailedInterfaceController" customModule="NoteDictate_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" numberOfLines="0" id="K7Q-N4-zaa"/>
+                    </items>
+                    <connections>
+                        <outlet property="textLabel" destination="K7Q-N4-zaa" id="es8-g8-ovG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="272" y="31"/>
+        </scene>
+    </scenes>
+</document>
